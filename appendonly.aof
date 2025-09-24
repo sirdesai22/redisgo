@@ -1,0 +1,2 @@
+{"cmd":"SET","key":"foo","value":"hello"}
+{"cmd":"DEL","key":"foo"}
