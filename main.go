@@ -120,7 +120,9 @@ func (db *DB) loadAOF() error {
 	scanner := bufio.NewScanner(db.aof)
 	for scanner.Scan() {
 		line := scanner.Bytes()
+		fmt.Println("line:", string(line))
 		var rec map[string]interface{}
+		fmt.Println("rec:", rec)
 		if err := json.Unmarshal(line, &rec); err != nil {
 			continue // skip invalid line
 		}
@@ -203,6 +205,7 @@ func handleConn(conn net.Conn, db *DB) {
 			continue
 		}
 		args := splitArgs(line)
+		fmt.Println("args:", args)
 		if len(args) == 0 {
 			io.WriteString(conn, "-ERR empty command\r\n")
 			continue

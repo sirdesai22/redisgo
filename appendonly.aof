@@ -1,2 +1,9 @@
 {"cmd":"SET","key":"foo","value":"hello"}
 {"cmd":"DEL","key":"foo"}
+{"cmd":"SET","key":"A","value":"10"}
+{"cmd":"SET","key":"B","ttl_ms":500,"value":"10"}
+{"cmd":"SET","key":"B","ttl_ms":3000,"value":"10"}
+{"cmd":"DEL","key":"A"}
+{"cmd":"SET","key":"A","value":"10"}
+{"cmd":"SET","key":"A","value":"12"}
+{"cmd":"SET","key":"a","value":"12"}
